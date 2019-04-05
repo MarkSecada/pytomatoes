@@ -23,6 +23,10 @@ class Movie:
 
     def __init__(self, name, url):
         self.name = name
+        if '/reviews/' not in url:
+            self.url = '{}/reviews/'.format(url)
+        else:
+            self.url = url
         self.url = url
         self.reviews = []
 
