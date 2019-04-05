@@ -17,6 +17,16 @@ class Movie:
                 time.sleep(5)
             self._get_reviews_on_page(page)
 
+    def unpack_reviews(self):
+        unpacked_reviews = []
+        for review in self.reviews:
+            record = review.to_record()
+            record['name'] = self.name
+            record['url'] = self.url
+            record['date'] = record['date'].strftime('%Y-%m-%d')
+            unpacked_reviews.append(record)
+        return unpacked_reviews
+
     def _get_review_pages(self):
         base_url = self.url
         r = requests.get(base_url)

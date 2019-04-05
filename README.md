@@ -15,9 +15,12 @@ name = "Dumbo"
 url = "https://www.rottentomatoes.com/m/dumbo_2019/reviews/"
 dumbo = Movie(name, url)
 dumbo.get_reviews()
-print(dumbo.reviews[0].to_record())
+reviews = dumbo.unpack_reviews()
+print(reviews[0])
 # >> {'critic': 'Daniel Krauze', 
 # >> 'is_fresh': 0, 
-# >> 'date': datetime.date(2019, 4, 5), 
-# >> 'text': 'From the start, Dumbo suffers from chronic irregularity. [Full review in Spanish]'}
+# >> 'date': '2019-04-05', 
+# >> 'text': 'From the start, Dumbo suffers from chronic irregularity. [Full review in Spanish]',
+# >> 'name': 'Dumbo',
+# >> 'url': 'https://www.rottentomatoes.com/m/dumbo_2019/reviews/'}
 ```
