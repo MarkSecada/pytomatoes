@@ -10,7 +10,7 @@ class Movie:
         self.url = url
         self.reviews = []
 
-    def get_reviews(self, rate_limit=False):
+    def get_reviews(self):
         review_pages = self._get_review_pages()
         for i, page in enumerate(review_pages):
             if i > 0 and (i + 1) % 5 == 0:
