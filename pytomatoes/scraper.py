@@ -5,6 +5,22 @@ from datetime import datetime
 
 class Movie:
 
+    """Movie on RottenTomatoes.
+
+    Params
+    ------
+    name : str, required
+        Name of the movie.
+    url : str, required
+        URL to the page of all its reviews.
+
+    Attr
+    ----
+    reviews : List[Dict]
+        List of reviews, where each review is
+        a dictionary. Initialized to an empty list.
+    """
+
     def __init__(self, name, url):
         self.name = name
         self.url = url
@@ -49,6 +65,9 @@ class Movie:
             self.reviews.append(Review(review))
 
 class Review:
+
+    """Review of a movie.
+    """
 
     def __init__(self, review):
         self.review = review
